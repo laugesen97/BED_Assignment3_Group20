@@ -1,0 +1,45 @@
+﻿@page
+@model Assignment3_Group20.Pages.NewReservationForDateModel
+
+@{
+    ViewData["Title"] = "NewReservationForDate";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>NewReservationForDate</h1>
+
+<h4>FutureReservation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FutureReservation.Dato" class="control-label"></label>
+                <input asp-for="FutureReservation.Dato" class="form-control" />
+                <span asp-validation-for="FutureReservation.Dato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FutureReservation.Adults" class="control-label"></label>
+                <input asp-for="FutureReservation.Adults" class="form-control" />
+                <span asp-validation-for="FutureReservation.Adults" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FutureReservation.Children" class="control-label"></label>
+                <input asp-for="FutureReservation.Children" class="form-control" />
+                <span asp-validation-for="FutureReservation.Children" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="TodaysBreakfast">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
