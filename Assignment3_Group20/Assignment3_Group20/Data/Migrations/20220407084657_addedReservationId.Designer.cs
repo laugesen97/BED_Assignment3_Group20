@@ -4,6 +4,7 @@ using Assignment3_Group20.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment3_Group20.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220407084657_addedReservationId")]
+    partial class addedReservationId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,16 +47,6 @@ namespace Assignment3_Group20.Data.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Reservation");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            Adults = 2,
-                            Children = 2,
-                            RoomNumber = 1,
-                            isCheckedIn = new DateTime(2022, 4, 7, 10, 51, 54, 105, DateTimeKind.Local).AddTicks(4405)
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
