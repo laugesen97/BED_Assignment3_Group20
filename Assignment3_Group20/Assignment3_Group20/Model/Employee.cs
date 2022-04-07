@@ -9,10 +9,10 @@
     }
     public class Receptionist : Employee
     {
-
+        public int ReceptionistNumber { get; set; }
     }
-    public class KitchenEmployee : Employee
+    public class Waiter : Employee
     {
-
+        public int WaiterNumber { get; set; }
     }
 }

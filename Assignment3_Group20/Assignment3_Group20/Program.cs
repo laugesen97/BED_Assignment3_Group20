@@ -10,10 +10,15 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("WaiterOnly", policy => policy.RequireClaim("WaiterNumber"));
+    options.AddPolicy("ReceptionistOnly", policy => policy.RequireClaim("ReceptionistNumber"));
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
