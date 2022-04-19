@@ -2,6 +2,7 @@ using Assignment3_Group20.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using Assignment3_Group20.Data.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
+
+
+//Add signlarR
+builder.Services.AddSignalR();
 
 builder.Services.AddAuthorization(options =>
 {
@@ -41,6 +46,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapHub<KitchenOverviewHub>("/kitchenOverviewHub");
 
 app.MapRazorPages();
 

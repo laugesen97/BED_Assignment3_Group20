@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "KitchenOverview";
     Layout = "~/Pages/Shared/_Layout.cshtml";
+
 }
 
 <h1>KitchenOverview</h1>
@@ -41,25 +42,32 @@
     @foreach (var item in Model.Reservation)
     {
         <tr>
-@*            @{
+            @*            @{
                 if (Model.ChosenDate == item.isCheckedIn)
                 {*@
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Adults)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Children)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.isCheckedIn)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.RoomNumber)
-                    </td>
-                @*}*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Adults)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Children)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isCheckedIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomNumber)
+            </td>
+            @*}*@
             @*}*@
 
         </tr>
     }
     </tbody>
 </table>
+
+<script type="text/javascript">
+    function reloadPage()
+    {
+        window.location.reload()
+    }
+</script>
