@@ -1,6 +1,7 @@
 ﻿#nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +18,7 @@ namespace Assignment3_Group20.Pages
         private DateTime _chosenDate = DateTime.Today;
 
         [BindProperty]
+        [DataType(DataType.Date)]
         public DateTime ChosenDate
         {
             get => _chosenDate;
@@ -29,10 +31,26 @@ namespace Assignment3_Group20.Pages
         }
 
         public IList<Reservation> Reservation { get;set; }
+        public IList<Reservation> ReservationsUnfiltered { get; set; }
 
         public async Task OnGetAsync()
         {
-            Reservation = await _context.Reservation.ToListAsync();
+           Reservation = await _context.Reservation.ToListAsync();
+        }
+
+        public async Task OnPostFilterList()
+        {
+
+            ReservationsUnfiltered = await _context.Reservation.ToListAsync();
+            Reservation = new List<Reservation>();
+
+            foreach (var reservation in ReservationsUnfiltered)
+            {
+                if (reservation.isCheckedIn.Date == ChosenDate)
+                {
+                    Reservation.Add(reservation);
+                }
+            }
         }
     }
 }
