@@ -4,6 +4,7 @@ using Assignment3_Group20.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment3_Group20.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220420134921_checkedinBoolAdded")]
+    partial class checkedinBoolAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,7 +81,7 @@ namespace Assignment3_Group20.Data.Migrations
                             Children = 2,
                             RoomNumber = 1,
                             checkedInBool = false,
-                            isCheckedIn = new DateTime(2022, 4, 20, 16, 19, 41, 818, DateTimeKind.Local).AddTicks(4012)
+                            isCheckedIn = new DateTime(2022, 4, 20, 15, 49, 21, 187, DateTimeKind.Local).AddTicks(4118)
                         });
                 });
 

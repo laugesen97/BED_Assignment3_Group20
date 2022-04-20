@@ -23,45 +23,70 @@
     <tr>
 
         <th>
-            @Html.DisplayNameFor(model => model.Reservation[0].Adults)
+            @Html.DisplayNameFor(model => model.KitchenDataList[0].TotalGuests)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Reservation[0].Children)
+            @Html.DisplayNameFor(model => model.KitchenDataList[0].TotalAdults)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Reservation[0].isCheckedIn)
+            @Html.DisplayNameFor(model => model.KitchenDataList[0].TotalChildren)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Reservation[0].RoomNumber)
+            @Html.DisplayNameFor(model => model.KitchenDataList[0].AdultsCheckedIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KitchenDataList[0].ChildrenCheckedIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KitchenDataList[0].TotalNotCheckedIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KitchenDataList[0].AdultsNotCheckedIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KitchenDataList[0].ChildrenNotCheckedIn)
         </th>
         <th></th>
     </tr>
     </thead>
     <tbody>
 
-    @foreach (var item in Model.Reservation)
+    @foreach (var item in Model.KitchenDataList)
     {
         <tr>
             @*            @{
                 if (Model.ChosenDate == item.isCheckedIn)
                 {*@
             <td>
-                @Html.DisplayFor(modelItem => item.Adults)
+                @Html.DisplayFor(modelItem => item.TotalGuests)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Children)
+                @Html.DisplayFor(modelItem => item.TotalAdults)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.isCheckedIn)
+                @Html.DisplayFor(modelItem => item.TotalChildren)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RoomNumber)
+                @Html.DisplayFor(modelItem => item.AdultsCheckedIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChildrenCheckedIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalNotCheckedIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdultsNotCheckedIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChildrenNotCheckedIn)
             </td>
             @*}*@
             @*}*@
 
         </tr>
-    }
+    } 
+   
     </tbody>
 </table>
 

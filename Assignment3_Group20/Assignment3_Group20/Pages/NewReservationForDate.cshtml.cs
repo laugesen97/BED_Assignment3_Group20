@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Assignment3_Group20.Data;
 using Assignment3_Group20.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Assignment3_Group20.Pages
 {
+    [Authorize(Policy = "ReceptionistOnly")]
     public class NewReservationForDateModel : PageModel
     {
         private readonly Assignment3_Group20.Data.ApplicationDbContext _context;

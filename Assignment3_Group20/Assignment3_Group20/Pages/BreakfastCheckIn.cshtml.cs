@@ -23,9 +23,9 @@ namespace Assignment3_Group20.Pages
         public BreakfastCheckInModel(Assignment3_Group20.Data.ApplicationDbContext context)
         {
             _context = context;
-            connection = new HubConnectionBuilder()
-                .WithUrl("/kitchenOverviewHub")
-                .Build();
+            //connection = new HubConnectionBuilder()
+            //    .WithUrl("/kitchenOverviewHub")
+            //    .Build();
         }
 
         public IActionResult OnGet()
@@ -44,6 +44,7 @@ namespace Assignment3_Group20.Pages
             //    return Page();
             //}
             Reservation.isCheckedIn = DateTime.Now;
+            Reservation.checkedInBool = true;
             _context.Reservation.Add(Reservation);
             await _context.SaveChangesAsync();
 

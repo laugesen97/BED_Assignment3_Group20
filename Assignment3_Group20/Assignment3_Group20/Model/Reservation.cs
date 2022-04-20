@@ -7,5 +7,6 @@
         public int Children { get; set; }
         public DateTime isCheckedIn { get; set; }
         public int RoomNumber { get; set; }
+        public bool checkedInBool { get; set; }
     }
 }
