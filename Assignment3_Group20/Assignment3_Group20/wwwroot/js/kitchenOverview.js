@@ -1,10 +1,10 @@
 ﻿
 
-var connection = new signalR.HubConnectionBuilder().withUrl("/kitchenOverviewHub").build();
+var connection = new signalR.HubConnectionBuilder().withUrl("/KitchenOverviewHub").build();
 
 connection.on("Update", function () {
     console.log("on");
-    window.location().reload();
+    window.location.reload();
 });
 
 connection.start().then(function() {

@@ -9,3 +9,11 @@ public class KitchenOverviewHub : Hub<IKitchenOverview>
         await Clients.All.Update();
     }
 }
+
+//public class KitchenOverviewHub : Hub
+//{
+//    public async Task Update()
+//    {
+//        await Clients.All.SendAsync("Update");
+//    }
+//}

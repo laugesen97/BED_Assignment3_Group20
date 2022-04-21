@@ -46,7 +46,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapHub<KitchenOverviewHub>("/kitchenOverviewHub");
+app.MapHub<KitchenOverviewHub>("/KitchenOverviewHub");
 
 app.MapRazorPages();
 

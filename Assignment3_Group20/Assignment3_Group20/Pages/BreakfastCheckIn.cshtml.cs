@@ -21,7 +21,8 @@ namespace Assignment3_Group20.Pages
     {
         private readonly Assignment3_Group20.Data.ApplicationDbContext _context;
         private readonly IHubContext<KitchenOverviewHub, IKitchenOverview> _kitchenOverviewHubContext;
-        private readonly object connection;
+        //private readonly IHubContext<KitchenOverviewHub> _hubContext;
+
 
         public BreakfastCheckInModel(ApplicationDbContext context, IHubContext<KitchenOverviewHub, IKitchenOverview> hubContext)
         {
@@ -29,6 +30,11 @@ namespace Assignment3_Group20.Pages
             _kitchenOverviewHubContext = hubContext;
 
         }
+        //public BreakfastCheckInModel(ApplicationDbContext context, IHubContext<KitchenOverviewHub> hubContext)
+        //{
+        //    _context = context;
+        //    _hubContext = hubContext;
+        //}
 
         public IActionResult OnGet()
         {

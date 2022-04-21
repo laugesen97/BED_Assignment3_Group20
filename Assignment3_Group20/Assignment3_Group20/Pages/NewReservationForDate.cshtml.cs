@@ -42,7 +42,7 @@ namespace Assignment3_Group20.Pages
             _context.Reservation.Add(Reservation);
             await _context.SaveChangesAsync();
 
-            _kitchenOverviewHubContext.Clients.All.Update();
+            await _kitchenOverviewHubContext.Clients.All.Update();
 
             return RedirectToPage("./Index");
         }

@@ -31,7 +31,6 @@ namespace Assignment3_Group20.Pages
         public async Task OnGetAsync()
         {
             Reservation = await _context.Reservation.ToListAsync();
-            await _kitchenOverviewHubContext.Clients.All.Update();
         }
     }
 }

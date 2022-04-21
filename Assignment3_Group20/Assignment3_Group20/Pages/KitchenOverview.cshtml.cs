@@ -23,7 +23,7 @@ namespace Assignment3_Group20.Pages
     public class KitchenOverviewModel : PageModel
     {
         private readonly ApplicationDbContext _context;
-        private readonly IHubContext<KitchenOverviewHub> _kitchenOverviewHubContext;
+        private readonly IHubContext<KitchenOverviewHub, IKitchenOverview> _kitchenOverviewHubContext;
 
         private DateTime _chosenDate = DateTime.Today;
 
@@ -35,7 +35,7 @@ namespace Assignment3_Group20.Pages
             set => _chosenDate = value;
         }
 
-        public KitchenOverviewModel(ApplicationDbContext context, IHubContext<KitchenOverviewHub> hubContext)
+        public KitchenOverviewModel(ApplicationDbContext context, IHubContext<KitchenOverviewHub, IKitchenOverview> hubContext)
         {
             _context = context;
             _kitchenOverviewHubContext = hubContext;
