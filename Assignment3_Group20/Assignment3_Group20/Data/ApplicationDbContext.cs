@@ -18,7 +18,5 @@ namespace Assignment3_Group20.Data
                 { Adults = 2, Children = 2, ID = 1, isCheckedIn = DateTime.Now, RoomNumber = 1 });
             base.OnModelCreating(builder);
         }
-
-        public DbSet<Assignment3_Group20.Model.FutureReservation> FutureReservation { get; set; }
     }
 }

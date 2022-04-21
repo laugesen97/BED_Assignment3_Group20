@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Assignment3_Group20.Data.Migrations
+namespace Assignment3_Group20.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220420134921_checkedinBoolAdded")]
-    partial class checkedinBoolAdded
+    [Migration("20220421085442_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,28 +23,6 @@ namespace Assignment3_Group20.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("Assignment3_Group20.Model.FutureReservation", b =>
-                {
-                    b.Property<int>("FutureReservationId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FutureReservationId"), 1L, 1);
-
-                    b.Property<int>("Adults")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Children")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Dato")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("FutureReservationId");
-
-                    b.ToTable("FutureReservation");
-                });
 
             modelBuilder.Entity("Assignment3_Group20.Model.Reservation", b =>
                 {
@@ -60,11 +38,11 @@ namespace Assignment3_Group20.Data.Migrations
                     b.Property<int>("Children")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("RoomNumber")
                         .HasColumnType("int");
-
-                    b.Property<bool>("checkedInBool")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime>("isCheckedIn")
                         .HasColumnType("datetime2");
@@ -79,9 +57,9 @@ namespace Assignment3_Group20.Data.Migrations
                             ID = 1,
                             Adults = 2,
                             Children = 2,
+                            Date = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             RoomNumber = 1,
-                            checkedInBool = false,
-                            isCheckedIn = new DateTime(2022, 4, 20, 15, 49, 21, 187, DateTimeKind.Local).AddTicks(4118)
+                            isCheckedIn = new DateTime(2022, 4, 21, 10, 54, 42, 394, DateTimeKind.Local).AddTicks(5803)
                         });
                 });
 
